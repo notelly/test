@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>EmpList</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>employee_id</th>
+				<th>first_name</th>
+				<th>job_id</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="empInfo : ${empList} "> <!-- 이름(암거나) : 컨트롤러에서 건져주는 변수 -->
+				<td th:text="${empInfo.employeeId}"/>
+				<td th:text="${empInfo.firstName}"/>
+				<td th:text="${empInfo.jobId}"/>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
